@@ -11,13 +11,15 @@ One InceptionV3 model: InceptionV3_model.hdf5.
  
 Demo.ipynb is the notebook for users to upload their food images and get the nutrition details. To use, this notebook need to import two files which are Nutrition.xlsx and InceptionV3_model.hdf5, which are also locate in the repo. Change the file path of the two files if needed, then run each cell in the notebook. At the final cell, change the path of the food image that you want to upload, then you can get its calorie, nutrition score, vitamins pie char and minerals pit char.
  
-3303FinalProjectTrainIncV3.ipynb is the notebook contains the machine learning lifecycle for training Foof-101 dataset using InceptionV3 model. After training, it will save the model with the lowest val loss as the name "InceptionV3_model.hdf5". To use the model, firstly import load_model 'from keras.models import load_model', then call
-'model = load_model(filepath='./InceptionV3_model.hdf5')', change the filepath to the location of the model. The detail for using the model is included in the "Test the model" section in this notebook.
+3303FinalProjectTrainIncV3.ipynb is the notebook contains the machine learning lifecycle for training Foof-101 dataset using InceptionV3 model. After training, it will save the model with the lowest val loss as the name "InceptionV3_model.hdf5". To use the model, firstly import load_model ```from keras.models import load_model```, then call
+```model = load_model(filepath='./InceptionV3_model.hdf5')```, change the filepath to the location of the model. The detail for using the model is included in the "Test the model" section in this notebook.
 
 Resnet50.ipynb is the notebook contains the machine learning lifecycle for training Foof-101 dataset using ResNet50 model. After training, it will save the model with the best val accuracy as the name "model.pth". To use the model, firstly import torch 'import torch', then call 
-'model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet50', pretrained=True)'
-'model.load_state_dict(torch.load('./model.pth'))'
-'model = V100_model.to('cpu')',
+```
+model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet50', pretrained=True)
+model.load_state_dict(torch.load('./model.pth'))
+model = V100_model.to('cpu')
+```
 change the file path to the location of the model. We didn't use ResNet50 model to test because its val accuracy is lower than InceptionV3 model.
 
 Nutrition.xlsx is the excel file we recreate base on the Open Food Fact dataset. This excel file take out the nutrition information we want and correspond them with the food name.

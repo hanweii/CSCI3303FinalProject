@@ -12,7 +12,22 @@ One InceptionV3 model: InceptionV3_model.hdf5.
 **Demo.ipynb** is the notebook for users to upload their food images and get the nutrition details. To use, this notebook need to import two files which are Nutrition.xlsx and InceptionV3_model.hdf5, which are also locate in the repo. Change the file path of the two files if needed, then run each cell in the notebook. At the final cell, change the path of the food image that you want to upload, then you can get its calorie, nutrition score, vitamins pie char and minerals pit char.
  
 **3303FinalProjectTrainIncV3.ipynb** is the notebook contains the machine learning lifecycle for training Foof-101 dataset using InceptionV3 model. After training, it will save the model with the lowest val loss as the name "InceptionV3_model.hdf5". To use the model, firstly import load_model ```from keras.models import load_model```, then call
-```model = load_model(filepath='./InceptionV3_model.hdf5')```, change the filepath to the location of the model. The detail for using the model is included in the "Test the model" section in this notebook.
+```model = load_model(filepath='./InceptionV3_model.hdf5')```, change the filepath to the location of the model. The detail for using the model is included in the "Test the model" section in this notebook:
+```
+from PIL import Image
+from keras.preprocessing import image
+
+test_image = Image.open('food-101/test_60/waffles/1005755.jpg')
+img = image.load_img('food-101/test_60/waffles/1005755.jpg', target_size=(299, 299))
+img_arr = image.img_to_array(img)
+img_arr = np.expand_dims(img_arr, axis=0)
+img_arr_test = preprocess_img(img_arr)
+y_pred = model.predict(img_arr_test)
+preds = np.argmax(y_pred, axis=1)
+best_pred = collections.Counter(preds).most_common(1)[0][0]
+print(arr[best_pred])
+plt.imshow(test_image)
+```
 
 **Resnet50.ipynb** is the notebook contains the machine learning lifecycle for training Foof-101 dataset using ResNet50 model. After training, it will save the model with the best val accuracy as the name "model.pth". To use the model, firstly import torch 'import torch', then call 
 ```

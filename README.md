@@ -44,7 +44,7 @@ change the file path to the location of the model. We didn't use ResNet50 model 
 
 **hamburger.jpg** is a default picture in Demo.pynb.
 
-**InceptionV3_model.hdf5** is the InceptionV3 model with val accuracy 0.87.
+**InceptionV3_model.hdf5** is the InceptionV3 model with val accuracy 0.87. It can be download at https://drive.google.com/file/d/1H8Lpi94cYoiPtHJGvj81PvDnUGiomXZ5/view?usp=sharing
 
 
 

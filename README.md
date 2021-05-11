@@ -28,7 +28,7 @@ print(arr[best_pred])
 plt.imshow(test_image)
 ```
 
-**Resnet50.ipynb** is the notebook contains the machine learning lifecycle for training Foof-101 dataset using ResNet50 model. After training, it will save the model with the best val accuracy as the name "model.pth". To use the model, firstly import torch 'import torch', then call 
+**Resnet50.ipynb** is the notebook contains the machine learning lifecycle for training Food-101 dataset using ResNet50 model. After training, it will save the model with the best val accuracy as the name "model.pth". To use the model, firstly import torch 'import torch', then call 
 ```
 model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet50', pretrained=True)
 model.load_state_dict(torch.load('./model.pth'))

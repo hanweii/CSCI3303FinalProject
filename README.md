@@ -6,7 +6,10 @@ Our goal is to train a food image classifier and implement a food nutrition anal
 This repo have four notebooks: 3303FinalProjectTrainIncV3.ipynb, Demo.ipynb, Resnet50.ipynb, PredictOneKind.ipynb.  
 One excel file: Nutrition.xlsx.  
 One power point file: Project.pptx.  
-One image file: hamburger.jpg.    
+One image file: hamburger.jpg.  
+One word document: Final Report.docx.
+
+**Final Report.docx** The final report of our project. It also has a link from google drive: https://drive.google.com/file/d/1pj0S58uux5Mw-b4zIkPXC8p4In9BS5cB/view?usp=sharing 
  
 **Demo.ipynb** is the notebook for users to upload their food images and get the nutrition details. To use, this notebook need to import two files which are Nutrition.xlsx and InceptionV3_model.hdf5. Nutrition.xlsx is in the repo. To get InceptionV3_model.hdf5, one way is to download the model we trained from this google drive link: https://drive.google.com/file/d/1H8Lpi94cYoiPtHJGvj81PvDnUGiomXZ5/view?usp=sharing (since the model is too big to upload to github) and this model has accuracy about 0.87 another way is to run **3303FinalProjectTrainIncV3.ipynb** to train another model. Change the file path of the two files if needed, then run each cell in the notebook. At the final cell, change the path of the food image that you want to upload, then you can get its calorie, nutrition score, vitamins pie char and minerals pit char.
  
